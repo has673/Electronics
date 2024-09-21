@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustEtronics</title>
+    <link rel="stylesheet" href="../styles/Main.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1 class="logo"><a href="./Home.html">TrustEtronics</a></h1>
+        <nav>
+            <ul>
+                <li><a href="./Main.html">Home</a</li>
+                    <li><a href="./Laptops.html">Laptop</a></li>
+                    <li><a href="./Tablet.html">Tablet</a></li>
+                    <li><a href="./Console.html">Consoles</a></li>
+                    <li><a href="./Phones.html">Phones</a></li>
+            </ul>
+        </nav>
+        <form class="search-form">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</header>
+<main>
+    <div class="subscription-cards-container">
+        <div class="subscription-card">
+            <h2>Basic Plan</h2>
+            <p>$9.99/month</p>
+            <ul>
+                <li>Access to exclusive deals</li>
+                <li>Monthly newsletter</li>
+                <li>Customer support</li>
+            </ul>
+            <button>Subscribe</button>
+        </div>
+        <div class="subscription-card">
+            <h2>Pro Plan</h2>
+            <p>$19.99/month</p>
+            <ul>
+                <li>Everything in Basic</li>
+                <li>Early access to new products</li>
+                <li>Extended warranty</li>
+            </ul>
+            <button>Subscribe</button>
+        </div>
+        <div class="subscription-card">
+            <h2>Premium Plan</h2>
+            <p>$29.99/month</p>
+            <ul>
+                <li>Everything in Pro</li>
+                <li>Free shipping</li>
+                <li>Personalized recommendations</li>
+            </ul>
+            <button>Subscribe</button>
+        </div>
+    </div>
+
+
+
+</main>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="left">
+            <h1> TrustEtronics</h1>
+        </div>
+        <div class="middle">
+            <h2>Know more about us</h2>
+            
+                <ul>
+                    <li><a href="./Quiz.html">Quiz</a></li>
+                    <li><a href="./Subscribe.html">Subscription</a></li>
+                    <li><a href="./AI.html">Recommendations</a></li>
+                    <li><a href="./Contact.html">Contact Us</a></li>
+            
+            </ul>
+        </div>
+        <div class="right">
+            <h2>Join us</h2>
+            <div class="social-icons">
+                <a  href="https://www.facebook.com/"><img src="fblogi.jpg" alt="Facebook"></a>
+                <a href="https://www.tiktok.com/en/" ><img src="tiktok.jpg" alt="TikTok"></a>
+                <a href="https://www.instagram.com/"><img src="insta.jpg" alt="Instagram"></a>
+                <a href="https://www.youtube.com/"><img src="yt1.png" alt="Instagram" class="inst"></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    function filterProducts(sortOrder) {
+        const productContainer = document.getElementById('product-container');
+        const productCards = productContainer.querySelectorAll('.product-card');
+
+        // Convert NodeList to array for sorting
+        const productArray = Array.from(productCards);
+
+        // Sort product cards based on price
+        productArray.sort((a, b) => {
+            const priceA = parseFloat(a.querySelector('.product-info p').textContent.replace('$', ''));
+            const priceB = parseFloat(b.querySelector('.product-info p').textContent.replace('$', ''));
+
+            if (sortOrder === 'lower') {
+                return priceB - priceA; // Sort from high to low
+            } else {
+                return priceA - priceB; // Sort from low to high
+            }
+        });
+
+        // Clear product container
+        productContainer.innerHTML = '';
+
+        // Append sorted product cards to product container
+        productArray.forEach(productCard => {
+            productContainer.appendChild(productCard);
+        });
+    }
+    function resetFilter() {
+        // Reload the page to reset the filters
+        location.reload();
+    }
+    function resetFilter() {
+        // Reload the page to reset the filters
+        location.reload();
+    }
+    function pop(){
+        alert('added')
+    }
+    function pop2(){
+        confirm('ok')
+    }
+</script>
+
+</body>
+</html>
